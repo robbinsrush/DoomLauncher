@@ -41,13 +41,13 @@ namespace DoomLauncher
             bool check = false;
             try
             {
-                InitGameFilesDebug();
+                InitGameFiles();
                 check = InitFileCheck("GameFiles", "GameFiles_", true);
 
                 if (!check)
                 {
-                    MessageBox.Show(this, "Initialization failure. Could not find DoomLauncher GameFiles directory. Please update your settings to continue.",
-                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show(this, "Initialization failure. Could not find DoomLauncher GameFiles directory. Please update your settings to continue.",
+                    //    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     DialogResult result;
                     bool success = false;
@@ -68,8 +68,7 @@ namespace DoomLauncher
             return check;
         }
 
-        [Conditional("DEBUG")]
-        private void InitGameFilesDebug()
+        private void InitGameFiles()
         {
             string basePath = "GameFiles";
 
